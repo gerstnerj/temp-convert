@@ -33,42 +33,43 @@ public class TemperatureConverterTest {
 	);	
     }
     
+    //TODO Complete new test methods, change assert parameters
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
-    void celsiusToKelvin(double celsius, double fahrenheit, double kelvin) {
+    void kelvinToFahrenheit(double celsius, double fahrenheit, double kelvin) {
 	assertEquals(
-		kelvin, 
-		TemperatureConverter.celsiusToKelvin(celsius),
+		fahrenheit, 
+		TemperatureConverter.kelvinToFahrenheit(kelvin),
 		CELSIUS_KELVIN_TOLERANCE
 	);	
     }
     
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
-    void celsiusToKelvin(double celsius, double fahrenheit, double kelvin) {
+    void kelvinToCelsius(double celsius, double fahrenheit, double kelvin) {
 	assertEquals(
-		kelvin, 
-		TemperatureConverter.celsiusToKelvin(celsius),
+		celsius, 
+		TemperatureConverter.kelvinToCelsius(kelvin),
 		CELSIUS_KELVIN_TOLERANCE
 	);	
     }
     
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
-    void celsiusToKelvin(double celsius, double fahrenheit, double kelvin) {
+    void fahrenheitToCelsius(double celsius, double fahrenheit) {
 	assertEquals(
-		kelvin, 
-		TemperatureConverter.celsiusToKelvin(celsius),
+		celsius, 
+		TemperatureConverter.fahrenheitToCelsius(fahrenheit),
 		CELSIUS_KELVIN_TOLERANCE
 	);	
     }
     
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
-    void celsiusToKelvin(double celsius, double fahrenheit, double kelvin) {
+    void fahrenheitToKelvin(double celsius, double fahrenheit, double kelvin) {
 	assertEquals(
 		kelvin, 
-		TemperatureConverter.celsiusToKelvin(celsius),
+		TemperatureConverter.fahrenheitToKelvin(fahrenheit),
 		CELSIUS_KELVIN_TOLERANCE
 	);	
     }
