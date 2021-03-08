@@ -2,8 +2,14 @@ package us.nm.state.hsd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+
+@TestMethodOrder(MethodOrderer.class)
 
 public class TemperatureConverterTest {
 
@@ -13,8 +19,10 @@ public class TemperatureConverterTest {
     static final double FAHRENHEIT_TOLERANCE = 0.001;
     static final double CELSIUS_KELVIN_TOLERANCE = 0.0005556;
     
+    @DisplayName("Celsius to Fahrenheit")
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
+    @Order(-1)
     void celsiusToFahrenheit(double celsius, double fahrenheit) {
 	assertEquals(
 		fahrenheit, 
@@ -25,6 +33,7 @@ public class TemperatureConverterTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "temperatures.csv", numLinesToSkip = 1)
+    @Order(10)
     void celsiusToKelvin(double celsius, double fahrenheit, double kelvin) {
 	assertEquals(
 		kelvin, 

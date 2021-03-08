@@ -1,7 +1,7 @@
 package us.nm.state.hsd;
 
 /**
- * Joshua Gestner
+ * Joshua Gerstner
  * @author gerstnerj
  *
  */
